@@ -1,6 +1,12 @@
 export default class ArrayStack<T> {
   a: Array<T>
   n: number;
+
+  constructor() {
+    this.a = [];
+    this.n = 0;
+  }
+
   size() {
     return this.n;
   }
@@ -16,7 +22,9 @@ export default class ArrayStack<T> {
   }
 
   add(i: number, x: T) {
-    // TODO: If `a` is full, resize first
+    if (this.a.length <= this.n + 1) {
+      this.resize();
+    }
 
     for (let j = this.n; j > i; j--) {
       this.a[j] = this.a[j - 1];
@@ -32,8 +40,9 @@ export default class ArrayStack<T> {
     }
     this.n--;
 
-    // TODO: If the length of `a` is much larger than `n`, resize `a`.
-
+    if (this.a.length >= 3 * this.n) {
+      this.resize();
+    }
     return x;
   }
 

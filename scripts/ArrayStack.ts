@@ -1,4 +1,4 @@
-import ArrayStack from '../ArrayStack';
+import ArrayStack from '../src/ArrayStack';
 
 const a = new ArrayStack<number>();
 

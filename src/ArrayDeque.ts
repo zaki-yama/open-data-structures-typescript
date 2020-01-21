@@ -25,25 +25,30 @@ export default class ArrayDeque<T> {
     }
 
     if (i < this.n / 2) {
-      // a[0], ..., a[i-1] を左に1つずらす
-      const j = this.j === 0 ? this.a.length - 1 : this.j - 1;
+      this.j = this.j === 0 ? this.a.length - 1 : this.j - 1;
+      // a[j%a.length], ..., a[(j+i)%a.length] を左に1つずらす
       for (let k = 0; k <= i - 1; k++) {
-        this.a[(j + k) % this.a.length] = this.a[(j + k + 1) % this.a.length];
+        this.a[(this.j + k) % this.a.length] = this.a[(this.j + k + 1) % this.a.length];
       }
     } else {
-      // a[i], ..., a[n-1] を右に1つずらす
+      // a[(j+i)%a.length], ..., a[(j+n-1)%a.length] を右に1つずらす
+      for (let k = this.n; k > i; k--) {
+        this.a[(this.j + k) % this.a.length] = this.a[(this.j + k - 1) % this.a.length];
+      }
     }
+    this.a[(this.j + i) % this.a.length] = x;
+    this.n++;
   }
 
-  remove() {
+  remove(i: number) {
     const x = this.a[this.j];
     this.j = (this.j + 1) % this.a.length;
     this.n--;
     if (this.a.length >= 3 * this.n) {
       this.resize();
     }
-
   }
+
   resize() {
     const b = new Array(Math.max(this.n * 2, 1));
     for (let k = 0; k < this.n; k++) {

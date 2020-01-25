@@ -65,6 +65,24 @@ export default class DLList<T> {
     this.log();
   }
 
+  // means `push` in Stack
+  addFirst(x: T) {
+    this.addBefore(this.dummy.next, x);
+    this.log();
+  }
+
+  // means `pop` in Stack
+  removeFirst() {
+    this.removeNode(this.dummy.next);
+    this.log();
+  }
+
+  // for Queue
+  addLast(x: T) {
+    this.addBefore(this.dummy, x);
+    this.log();
+  }
+
   removeNode(w: DLListNode<T>) {
     w.prev.next = w.next;
     w.next.prev = w.prev;

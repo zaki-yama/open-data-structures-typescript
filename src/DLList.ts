@@ -1,7 +1,7 @@
 class DLListNode<T> {
   next!: DLListNode<T>;
   prev!: DLListNode<T>;
-  x?: T
+  x?: T;
 
   constructor(x?: T) {
     this.x = x;
@@ -106,6 +106,6 @@ export default class DLList<T> {
       data.push(current.x);
       current = current.next;
     }
-    console.log(data.join(', '));
+    console.log(data.join(", "));
   }
 }

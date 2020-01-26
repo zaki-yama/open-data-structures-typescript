@@ -2,21 +2,21 @@ import ArrayDeque from "../src/ArrayDeque";
 
 const a = new ArrayDeque<string>();
 
-a.add(0, 'a');
+a.add(0, "a");
 console.log(a);
-a.add(1, 'b');
+a.add(1, "b");
 console.log(a);
-a.add(2, 'c');
+a.add(2, "c");
 console.log(a);
-a.add(3, 'd');
+a.add(3, "d");
 console.log(a);
-a.add(4, 'e');
+a.add(4, "e");
 console.log(a);
-a.add(5, 'f');
+a.add(5, "f");
 console.log(a);
 
 a.remove(2);
 console.log(a);
 
-a.add(3, 'x');
+a.add(3, "x");
 console.log(a);

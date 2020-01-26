@@ -1,5 +1,5 @@
 export default class ArrayStack<T> {
-  a: Array<T>
+  a: T[];
   n: number;
 
   constructor() {

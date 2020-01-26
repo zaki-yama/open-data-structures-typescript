@@ -1,13 +1,12 @@
 class SLListNode<T> {
   next: SLListNode<T> | null;
-  x: T
+  x: T;
 
   constructor(x: T) {
     this.x = x;
     this.next = null;
   }
 }
-
 
 export default class SLList<T> {
   head: SLListNode<T> | null;
@@ -48,10 +47,10 @@ export default class SLList<T> {
   log() {
     const data = [];
     let current = this.head;
-    while(current) {
+    while (current) {
       data.push(current.x);
       current = current.next;
     }
-    console.log(data.join(', '));
+    console.log(data.join(", "));
   }
 }

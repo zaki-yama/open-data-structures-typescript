@@ -1,5 +1,5 @@
 export default class ArrayQueue<T> {
-  a: Array<T>;
+  a: T[];
   j: number;
   n: number;
 
@@ -25,12 +25,11 @@ export default class ArrayQueue<T> {
     if (this.a.length >= 3 * this.n) {
       this.resize();
     }
-
   }
   resize() {
     const b = new Array(Math.max(this.n * 2, 1));
     for (let k = 0; k < this.n; k++) {
-      b[k] = this.a[(this.j + k) % this.a.length]
+      b[k] = this.a[(this.j + k) % this.a.length];
     }
     this.a = b;
     this.j = 0;

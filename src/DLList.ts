@@ -20,6 +20,10 @@ export default class DLList<T> {
     this.n = 0;
   }
 
+  size() {
+    return this.n;
+  }
+
   getNode(i: number): DLListNode<T> {
     let p;
     if (i < this.n / 2) {

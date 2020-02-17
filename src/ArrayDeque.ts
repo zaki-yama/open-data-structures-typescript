@@ -9,6 +9,10 @@ export default class ArrayDeque<T> {
     this.j = 0;
   }
 
+  size() {
+    return this.n;
+  }
+
   get(i: number) {
     return this.a[(this.j + i) % this.a.length];
   }
@@ -51,6 +55,7 @@ export default class ArrayDeque<T> {
     if (this.a.length >= 3 * this.n) {
       this.resize();
     }
+    return x;
   }
 
   resize() {

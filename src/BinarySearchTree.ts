@@ -84,4 +84,49 @@ export class BinarySearchTree<T> {
     this.n++;
     return true;
   }
+
+  splice(u: Node<T>) {
+    let s, p;
+    if (u.left !== null) {
+      s = u.left;
+    } else {
+      s = u.right;
+    }
+
+    if (u === this.r) {
+      this.r = s;
+      p = null;
+    } else {
+      p = u.parent!;
+      if (p.left === u) {
+        p.left = s;
+      } else {
+        p.right = s;
+      }
+    }
+    if (s !== null) {
+      s.parent = p;
+    }
+    this.n--;
+  }
+
+  removeNode(u: Node<T>) {
+    if (u.left === null || u.right === null) {
+      this.splice(u);
+    } else {
+      let w = u.right;
+      while (w.left !== null) {
+        w = w.left;
+      }
+      u.x = w.x;
+      this.splice(w);
+    }
+  }
+
+  remove(x: T) {
+    const u = this.findLast(x);
+    if (u !== null && u.x === x) {
+      this.removeNode(u);
+    }
+  }
 }

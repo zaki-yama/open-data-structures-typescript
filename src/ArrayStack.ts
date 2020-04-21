@@ -33,6 +33,10 @@ export default class ArrayStack<T> {
     this.n++;
   }
 
+  addLast(x: T) {
+    this.add(this.n, x);
+  }
+
   remove(i: number): T {
     const x = this.a[i]; // Need clone?
     for (let j = i; j < this.n - 1; j++) {

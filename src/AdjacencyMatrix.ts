@@ -1,4 +1,5 @@
-export default class AdjacencyMatrix {
+import { Graph } from "./Graph";
+export default class AdjacencyMatrix implements Graph {
   a: boolean[][];
   n: number;
 

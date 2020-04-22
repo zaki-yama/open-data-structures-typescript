@@ -1,6 +1,7 @@
+import { Graph } from "./Graph";
 import ArrayStack from "./ArrayStack";
 
-export default class AdjacencyLists {
+export default class AdjacencyLists implements Graph {
   n: number;
   adj: Array<ArrayStack<number>>;
 

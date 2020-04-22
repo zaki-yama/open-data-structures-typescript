@@ -19,6 +19,11 @@ export default class SLList<T> {
     this.n = 0;
   }
 
+  size() {
+    return this.n;
+  }
+
+  // Stack
   push(x: T) {
     const u = new SLListNode(x);
     u.next = this.head;
@@ -31,6 +36,7 @@ export default class SLList<T> {
     return x;
   }
 
+  // Stack
   pop() {
     if (this.n === 0) return null;
     const u = this.head!;
@@ -42,6 +48,24 @@ export default class SLList<T> {
     }
     this.log();
     return x;
+  }
+
+  // Queue
+  add(x: T) {
+    const u = new SLListNode(x);
+    if (this.n === 0) {
+      this.head = u;
+    } else {
+      this.tail!.next = u;
+    }
+    this.tail = u;
+    this.n++;
+    return true;
+  }
+
+  // Queue (same as `pop()` of Stack)
+  remove() {
+    return this.pop();
   }
 
   log() {

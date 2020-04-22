@@ -8,6 +8,9 @@ list.push("c");
 list.push("d");
 list.push("e");
 
+list.add("1");
+list.log();
+
 console.log("---pop---");
 list.pop();
 list.pop();

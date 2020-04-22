@@ -48,12 +48,7 @@ export default class AdjacencyLists {
   inEdges(i: number) {
     const res: number[] = [];
     for (let j = 0; j < this.n; j++) {
-      for (let k = 0; k < this.adj[j].size(); k++) {
-        if (this.adj[j].get(k) === i) {
-          res.push(j);
-          break;
-        }
-      }
+      if (this.hasEdge(j, i)) res.push(j);
     }
     return res;
   }

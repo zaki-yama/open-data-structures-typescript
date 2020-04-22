@@ -1,4 +1,4 @@
-import { BTree } from "./BTree";
+import BinaryTree from "./BinaryTree";
 
 export class Node<T> {
   x: T;

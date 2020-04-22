@@ -10,7 +10,7 @@ class Node {
   }
 }
 
-export class BTree {
+export default class BinaryTree {
   r: Node | null = null; // root
 
   depth(u: Node) {

@@ -9,12 +9,6 @@ export default class AdjacencyLists {
     this.adj = Array.from({ length: n }).map(_ => new ArrayStack<number>());
   }
 
-  private createBooleanMatrix(i: number, j: number) {
-    return Array.from({ length: i }).map(_ =>
-      Array.from({ length: j }).map(__ => false)
-    );
-  }
-
   addEdge(i: number, j: number) {
     this.adj[i].addLast(j);
   }

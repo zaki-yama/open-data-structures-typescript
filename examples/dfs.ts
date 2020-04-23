@@ -1,5 +1,5 @@
 import AdjacencyLists from "../src/AdjacencyLists";
-import { dfs } from "../src/dfs";
+import { dfs, dfs2 } from "../src/dfs";
 
 const g = new AdjacencyLists(4);
 
@@ -14,3 +14,5 @@ g.addEdge(1, 0);
 g.addEdge(1, 3);
 
 dfs(g, 0);
+
+dfs2(g, 0);

@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaki-yama/ods-typescript.git"
+    "url": "git+https://github.com/zaki-yama/open-data-structures-typescript.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shingo Yamazaki <shingoyamazaki00@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zaki-yama/ods-typescript/issues"
+    "url": "https://github.com/zaki-yama/open-data-structures-typescript/issues"
   },
-  "homepage": "https://github.com/zaki-yama/ods-typescript#readme",
+  "homepage": "https://github.com/zaki-yama/open-data-structures-typescript#readme",
   "devDependencies": {
     "@cybozu/eslint-config": "^9.0.1",
     "eslint": "^6.8.0",
